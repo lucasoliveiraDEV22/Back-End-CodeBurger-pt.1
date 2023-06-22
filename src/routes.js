@@ -1,19 +1,19 @@
 import { Router } from "express"
+import multer from "multer"
+import multerConfig from "./config/multer"
 
-import { v4 } from "uuid"
+import ProductController from "./app/controllers/ProductController"
+import UserController from "./app/controllers/UserController"
+import SessionController from "./app/controllers/SessionController"
 
-import User from "./app/models/User"
+const upload = multer(multerConfig)
 
 const routes = new Router()
 
-routes.get("/", async (request, response) => {
-  const user = await User.create({
-    id: v4(),
-    name: "Lucas",
-    email: "lucas@email.com",
-    password_hash: "1234@",
-  })
-  return response.json(user)
-})
+routes.post("/users", UserController.store)
+
+routes.post("/sessions", SessionController.store)
+
+routes.post("/products", upload.single("file"), ProductController.store)
 
 export default routes
