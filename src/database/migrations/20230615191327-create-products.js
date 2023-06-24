@@ -18,7 +18,7 @@ module.exports = {
         allowNull: false,
       },
       category: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       path: {
@@ -36,9 +36,7 @@ module.exports = {
     })
   },
 
-  async down(queryInterface, Sequelize) {
-   
-      await queryInterface.dropTable('products');
-    
+  async down(queryInterface) {
+    await queryInterface.dropTable("products")
   },
 }

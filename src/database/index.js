@@ -1,9 +1,9 @@
-import Sequelize from "sequelize"
+import { Sequelize } from "sequelize"
 
 import User from "../app/models/User"
 import Product from "../app/models/Product"
 
-import configDatabase from "../config/database"
+import ConfigDatabase from "../config/database"
 
 const models = [User, Product]
 
@@ -13,7 +13,7 @@ class Database {
   }
 
   init() {
-    this.connection = new Sequelize(configDatabase)
+    this.connection = new Sequelize(ConfigDatabase)
     models.map((model) => model.init(this.connection))
   }
 }
