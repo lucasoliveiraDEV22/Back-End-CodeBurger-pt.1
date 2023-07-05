@@ -1,7 +1,7 @@
 import * as Yup from "yup"
-
 import Product from "../models/Product"
 import Category from "../models/Category"
+
 class ProductController {
   async store(request, response) {
     const schema = Yup.object().shape({
@@ -38,7 +38,7 @@ class ProductController {
       ],
     })
 
-    console.log(request.userId)
+    
     return response.json(products)
   }
 }
