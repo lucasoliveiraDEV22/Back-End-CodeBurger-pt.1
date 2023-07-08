@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: connect ETIMEDOUT 2606:4700::6810:1323:443
+  Error: connect ETIMEDOUT 2606:4700::6810:1a23:443
       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1494:16)
 
 npm manifest: 
