@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize"
-import mongoose from "mongo"
+import mongoose from "mongoose"
 
 import User from "../app/models/User"
 import Product from "../app/models/Product"
@@ -25,7 +25,7 @@ class Database {
   }
 
   mongo() {
-    mongoose.set(‘strictQuery‘, false); 
+    mongoose.set('strictQuery', false)
     this.mongoConnection = mongoose.connect(
       "mongodb://localhost:27017/codeburger",
       {

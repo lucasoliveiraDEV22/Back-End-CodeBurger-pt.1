@@ -26,7 +26,7 @@ const OrderSchema = new mongoose.Schema({
         required: true,
       },
       category: {
-        trype: String,
+        type: String,
         required: true,
       },
       url: {
@@ -41,7 +41,7 @@ const OrderSchema = new mongoose.Schema({
   ],
   status: {
     type: String,
-    required: true,
+    required: true
   },
   {
     timestamps:true
