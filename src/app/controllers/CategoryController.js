@@ -95,6 +95,7 @@ class CategoryController {
     return response.status(200).json()
   }
 
+// eslint-disable-next-line no-dupe-class-members
 catch(err) {
     console.log(err)
   }
